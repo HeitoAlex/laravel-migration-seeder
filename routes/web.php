@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Guest\PageController as GuestPageController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.app');
-});
+Route::get('/', [GuestPageController::class, 'index'])->name('guest.home');
